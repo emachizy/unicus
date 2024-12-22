@@ -1,7 +1,13 @@
-import HeaderImg from "../assets/Images/HeaderImg.jpg";
-import Img1 from "../assets/Images/Img1.jpg";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import HeaderImg from "../assets/Images/HeaderImg.jpg";
+import Img1 from "../assets/Images/Img1.jpg";
+import quoteImg from "../assets/Images/quoteImg.jpg";
+
+// Accordian
+import accordionImg from "../assets/Images/accordion-img.jpg";
+import accordionImg1 from "../assets/Images/accordion-img1.jpg";
+
 import {
   Navigation,
   Pagination,
@@ -18,6 +24,8 @@ import { FaDiagramSuccessor } from "react-icons/fa6";
 import { TiMediaFastForward } from "react-icons/ti";
 import { GiSkills } from "react-icons/gi";
 import { RiCustomerService2Fill } from "react-icons/ri";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { LuQuote } from "react-icons/lu";
 
 // Import Swiper styles
 import "swiper/css";
@@ -32,6 +40,15 @@ import { CardProvider } from "../context/CardContext";
 // import Card from "../components/Card";
 import CardList from "../components/CardList";
 import TeamCardList from "../components/TeamCardList";
+import { AccordionCustomStyles } from "../components/AccordionCustomStyles";
+import {
+  Carousel,
+  IconButton,
+  Progress,
+  Typography,
+} from "@material-tailwind/react";
+import { TestimonialCard } from "../components/TestimonialCard";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -111,7 +128,7 @@ const Home = () => {
   return (
     <>
       <div
-        className="bg-gradient-to-tr from-gray-800 to-gray-950 h-full bg-cover bg-center w-full relative"
+        className="bg-gradient-to-tr from-gray-900 to-gray-900 h-full bg-cover bg-no-repeat animate-zoomIn bg-center w-full relative"
         data-aos="fade-up"
       >
         <img
@@ -138,6 +155,7 @@ const Home = () => {
             scrollbar={{ draggable: true }}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
+            className="transition-all duration-1000 delay-1000"
           >
             <SwiperSlide>
               <div>
@@ -163,7 +181,8 @@ const Home = () => {
                     collaboration and idea-sharing after turnkey catalysts for
                     change.
                   </p>
-                  <div className="mx-auto">
+                  <div className="flex justify-center gap-5 items-center">
+                    <AboutBtn data-aos="fade-up" />
                     <AboutBtn data-aos="fade-up" />
                   </div>
                 </div>
@@ -185,8 +204,9 @@ const Home = () => {
                   mindshare. <br /> Credibly coordinate reliable collaboration
                   and idea-sharing after turnkey catalysts for change
                 </p>
-                <div>
-                  <AboutBtn className="mx-auto" />
+                <div className="flex justify-center gap-5 items-center">
+                  <AboutBtn data-aos="fade-up" />
+                  <AboutBtn data-aos="fade-up" />
                 </div>
               </div>
             </SwiperSlide>
@@ -206,7 +226,10 @@ const Home = () => {
                   mindshare. <br /> Credibly coordinate reliable collaboration
                   and idea-sharing after turnkey catalysts for change.
                 </p>
-                <AboutBtn />
+                <div className="flex justify-center gap-5 items-center">
+                  <AboutBtn data-aos="fade-up" />
+                  <AboutBtn data-aos="fade-up" />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -223,7 +246,10 @@ const Home = () => {
                   mindshare. <br /> Credibly coordinate reliable collaboration
                   and idea-sharing after turnkey catalysts for change.
                 </p>
-                <AboutBtn />
+                <div className="flex justify-center gap-5 items-center">
+                  <AboutBtn data-aos="fade-up" />
+                  <AboutBtn data-aos="fade-up" />
+                </div>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -304,7 +330,7 @@ const Home = () => {
           <div className="flex-initial md:w-[60%]">
             <div className="flex items-center gap-2">
               <IoIosPhotos className="text-xl text-purple-900" />
-              <h4 className="text-lg text-purple-800">Get best It solution</h4>
+              <h4 className="text-lg text-purple-800">Get best IT solution</h4>
             </div>
             <h1 className="text-6xl font-bold">
               Trust Our Best IT Solution For Your Business
@@ -329,14 +355,16 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <AboutBtn />
+            <div className="text-white">
+              <AboutBtn />
+            </div>
           </div>
         </div>
       </section>
       {/* services section */}
       <section>
-        <div className="flex flex-col justify-center items-center">
-          <p className="text-purple-800 text-center py-4 capitalize">
+        <div className="flex flex-col justify-center items-center uppercase">
+          <p className="text-purple-800 text-center py-4 uppercase">
             Our Latest Services
           </p>
           <h1 className="text-5xl font-bold text-center pt-2 p-4 w-[40%]">
@@ -345,8 +373,8 @@ const Home = () => {
         </div>
         <div>
           <CardProvider cards={cardData}>
-            <div className="md:w-4/5 mx-auto min-h-screen flex justify-center items-center">
-              <CardList />
+            <div className="md:w-4/5 mx-auto min-h-screen flex justify-center items-center ">
+              <CardList className="hover:bg-purple-800 text-[#fff]" />
             </div>
           </CardProvider>
         </div>
@@ -402,7 +430,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center uppercase">
           <p className="text-purple-800 text-center py-4 capitalize">
             Great Team Members
           </p>
@@ -412,10 +440,303 @@ const Home = () => {
         </div>
         <CardProvider cards={teamCardData}>
           <div className="md:w-4/5 mx-auto min-h-screen flex justify-center items-center">
-            <TeamCardList />
+            <TeamCardList img={Img1} />
           </div>
         </CardProvider>
       </section>
+      <section className="accordion md:w-4/5 md:ml-auto p-5">
+        <div className="md:flex items-center justify-between gap-2">
+          <div className="ml-[-200px] md:relative flex-initial py-6 md:py-0 md:w-[60%]">
+            <img
+              src={accordionImg}
+              alt=""
+              className="md:w-[700px] -z-10 md:my-0 my-10"
+            />
+
+            <img
+              src={accordionImg1}
+              alt=""
+              className="md:w-[400px] bg-white p-2 md:ml-24 md:mt-[-70px] rounded z-50 md:relative"
+            />
+          </div>
+          <div className="flex-initial md:w-[50%]">
+            <div>
+              <div className="flex items-center gap-2">
+                <IoIosPhotos className="text-xl text-white" />
+                <h4 className="text-lg text-white pt-2">
+                  Get best IT solution
+                </h4>
+              </div>
+              <h1 className="text-4xl font-bold text-white pt-2 pb-2">
+                Trust Our Best IT Solution For Your Business
+              </h1>
+            </div>
+            <AccordionCustomStyles />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="md:w-4/5 mx-auto md:flex gap-4 my-20">
+          <div className="flex-initial md:w-[50%] px-4">
+            <div className="flex items-center gap-2">
+              <IoIosPhotos className="text-xl text-purple-900" />
+              <h4 className="text-lg text-purple-800 uppercase">
+                Get best IT solution
+              </h4>
+            </div>
+            <div className="uppercase">
+              <h1 className="md:text-6xl text-xl font-bold">
+                Trust Our Best IT Solution For Your Business
+              </h1>
+              <p className="text-gray-500 py-4">
+                Compellingly mesh cross-platform portals through functional
+                human capital world-class architectures for orthogonal
+                initiatives. Assertively benchmark visionary quality vectors
+                after covalent e-tailers. Intrinsicly enhance 24/7 users and
+                supply process
+              </p>
+            </div>
+            <div>
+              <div className="w-full">
+                <div className="mb-2 flex items-center justify-between gap-4">
+                  <Typography color="blue-gray" variant="h6" className="my-2">
+                    Business Security
+                  </Typography>
+                  <Typography color="blue-gray" variant="h6">
+                    60%
+                  </Typography>
+                </div>
+                <Progress value={60} color="purple" />
+              </div>
+              <div className="w-full">
+                <div className="mb-2 flex items-center justify-between gap-4">
+                  <Typography color="blue-gray" variant="h6" className="my-2">
+                    Career Development
+                  </Typography>
+                  <Typography color="blue-gray" variant="h6">
+                    88%
+                  </Typography>
+                </div>
+                <Progress value={88} color="purple" />
+              </div>
+              <div className="w-full">
+                <div className="mb-2 flex items-center justify-between gap-4">
+                  <Typography color="blue-gray" variant="h6" className="my-2">
+                    Business Innovation
+                  </Typography>
+                  <Typography color="blue-gray" variant="h6">
+                    90%
+                  </Typography>
+                </div>
+                <Progress value={90} color="purple" />
+              </div>
+            </div>
+          </div>
+          <div className="flex-initial md:w-[50%] md:mt-0 mt-20">
+            <div className="flex gap-4">
+              <img
+                src={Img1}
+                alt=""
+                className="w-72 object-cover rounded-3xl"
+              />
+              <img
+                src={Img1}
+                alt=""
+                className="w-72 object-cover rounded-3xl"
+              />
+            </div>
+            <div className="flex justify-center items-center -mt-10">
+              <img
+                src={Img1}
+                alt=""
+                className="w-72 object-cover rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Get a quote */}
+      <section className="">
+        <div
+          className="bg-gradient-to-tr from-gray-900 to-gray-900 h-full bg-cover bg-center w-full relative z-10"
+          data-aos="fade-up"
+        >
+          <img
+            src={quoteImg}
+            alt=""
+            className="w-full h-full object-cover absolute mix-blend-overlay"
+          />
+          <div
+            className="md:flex justify-between md:w-4/5 mx-auto text-white text-center pt-36 pb-28 md:px-0 px-4"
+            data-aos="fade-up"
+          >
+            <div className="uppercase">
+              <h6 className="font-bold">
+                We are here to answer your questions 247
+              </h6>
+              <h1 className="text-6xl">Need a consultation?</h1>
+            </div>
+            <div>
+              <button className="bg-purple-700 py-4 px-10 hover:bg-black transition-all duration-300 flex justify-center items-center gap-2 font-bold rounded ">
+                Get a Quote <FaLongArrowAltRight />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Great team */}
+      <section className="team bg-gradient-to-r from-blue-gray-300 to-gray-100 pt-16">
+        <div className="flex flex-col justify-center items-center uppercase">
+          <p className="text-purple-800 text-center py-4 uppercase font-bold">
+            Great Team Members{" "}
+          </p>
+          <h1 className="text-5xl font-bold text-center pt-2 p-4 w-[40%]">
+            We Have Expert Team{" "}
+          </h1>
+        </div>
+        <div className="md:w-4/5 mx-auto md:flex gap-10 px-4">
+          <div>
+            <div>
+              <TiDeviceDesktop className="text-6xl flex items-center justify-center p-4 bg-white rounded-full mx-auto mb-5 text-purple-800" />
+              <h1 className="text-4xl text-center font-bold">Medicine Help</h1>
+              <h6 className="text-xl text-center text-gray-500 py-4">
+                Extensible for web iterate process before meta services impact
+                with olisticly enable client.
+              </h6>
+            </div>
+          </div>
+          <div className="my-20 shadow-md bg-blue-gray-100 opacity-50 rounded">
+            <div>
+              <TiDeviceDesktop className="text-6xl text-purple-800 flex items-center justify-center p-4 bg-white rounded-full mx-auto mb-5" />
+              <h1 className="text-4xl text-center font-bold">Medicine Help</h1>
+              <h6 className="text-xl text-center text-black py-4">
+                Extensible for web iterate process before meta services impact
+                with olisticly enable client.
+              </h6>
+            </div>
+          </div>
+          <div className="">
+            <div>
+              <TiDeviceDesktop className="text-6xl text-purple-800 flex items-center justify-center p-4 bg-white rounded-full mx-auto mb-5" />
+              <h1 className="text-4xl text-center font-bold">Medicine Help</h1>
+              <h6 className="text-xl text-center text-gray-500 py-4">
+                Extensible for web iterate process before meta services impact
+                with olisticly enable client.
+              </h6>
+            </div>
+          </div>
+          <div className="mt-20 shadow-md bg-blue-gray-100 opacity-50 rounded">
+            <div>
+              <div>
+                <TiDeviceDesktop className="text-6xl text-purple-800 flex items-center justify-center p-4 bg-white rounded-full mx-auto mb-5" />
+              </div>
+              <h1 className="text-4xl text-center font-bold">Medicine Help</h1>
+              <h6 className="text-xl text-center text-black py-4">
+                Extensible for web iterate process before meta services impact
+                with olisticly enable client.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* customer feedback */}
+      <section>
+        <div className="md:w-4/5 mx-auto my-20">
+          <div className="">
+            <div className="flex items-center gap-2">
+              <IoIosPhotos className="text-xl text-purple-900" />
+              <h4 className="text-lg text-purple-800 p-2">Our Best Review’s</h4>
+            </div>
+            <h1 className="text-6xl font-bold pb-4">Customer’s Feedbacks</h1>
+          </div>
+          <div>
+            <Carousel
+              className="rounded-xl"
+              prevArrow={({ handlePrev }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handlePrev}
+                  className="flex mr-10 bg-purple-800 px-12 !absolute top-10 right-20 -translate-y-2/4 hover:text-black hover:bg-white transition-all duration-500"
+                >
+                  <div className="flex gap-2 items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="h-6 w-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                      />
+                    </svg>
+                    <h1>PREV</h1>
+                  </div>
+                </IconButton>
+              )}
+              nextArrow={({ handleNext }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handleNext}
+                  className="flex bg-purple-800 px-12 !absolute top-10 !right-4 -translate-y-2/4 z-10 hover:text-black hover:bg-white transition-all duration-500"
+                >
+                  <div className="flex gap-2 items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="h-6 w-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                    <h3>NEXT</h3>
+                  </div>
+                </IconButton>
+              )}
+            >
+              <div className="mt-24 p-10 bg-gray-500 shadow-2xl w-4/5 mx-auto rounded">
+                <div className="rounded -mt-16 bg-purple-800 text-white w-16 flex items-center justify-center py-4">
+                  <LuQuote className="text-2xl" />
+                </div>
+                <TestimonialCard />
+              </div>
+              <div className="mt-24 p-10 bg-gray-500 shadow-2xl w-4/5 mx-auto">
+                <div className="rounded -mt-16 bg-purple-800 text-white w-16 flex items-center justify-center py-4">
+                  <LuQuote className="text-2xl" />
+                </div>
+                <TestimonialCard />
+              </div>
+              <div className="mt-24 p-10 bg-gray-500 shadow-2xl w-4/5 mx-auto">
+                <div className="rounded -mt-16 bg-purple-800 text-white w-16 flex items-center justify-center py-4">
+                  <LuQuote className="text-2xl" />
+                </div>
+                <TestimonialCard />
+              </div>
+              <div className="mt-24 p-10 bg-gray-500 shadow-2xl w-4/5 mx-auto">
+                <div className="rounded -mt-16 bg-purple-800 text-white w-16 flex items-center justify-center py-4">
+                  <LuQuote className="text-2xl" />
+                </div>
+                <TestimonialCard />
+              </div>
+            </Carousel>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };

@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.accordion {
+  background: #8241fb;
+  background: radial-gradient(circle at center, #8241fb 10%, #1f1e1f 84%);
+}
+
+.team {
+  background-image: url(./assets/Images/teamBg.jpg);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
