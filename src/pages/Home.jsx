@@ -320,14 +320,26 @@ const Home = () => {
         </div>
         {/* Get it best */}
         <div className="md:flex gap-14 w-4/5 mx-auto pt-20">
-          <div className="flex-initial md:w-[40%] rounded">
+          <div
+            className="flex-initial md:w-[40%] rounded"
+            data-aos="slide-right"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <img
               src={Img1}
               alt="image"
               className="w-full h-full object-cover rounded"
             />
           </div>
-          <div className="flex-initial md:w-[60%]">
+          <div
+            className="flex-initial md:w-[60%]"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <div className="flex items-center gap-2">
               <IoIosPhotos className="text-xl text-purple-900" />
               <h4 className="text-lg text-purple-800">Get best IT solution</h4>
@@ -363,7 +375,13 @@ const Home = () => {
       </section>
       {/* services section */}
       <section>
-        <div className="flex flex-col justify-center items-center uppercase">
+        <div
+          className="flex flex-col justify-center items-center uppercase"
+          data-aos="zoom-in"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <p className="text-purple-800 text-center py-4 uppercase">
             Our Latest Services
           </p>
@@ -373,7 +391,13 @@ const Home = () => {
         </div>
         <div>
           <CardProvider cards={cardData}>
-            <div className="md:w-4/5 mx-auto min-h-screen flex justify-center items-center ">
+            <div
+              className="md:w-4/5 mx-auto min-h-screen flex justify-center items-center "
+              data-aos="fade-zoom-in"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
               <CardList className="hover:bg-purple-800 text-[#fff]" />
             </div>
           </CardProvider>
@@ -430,7 +454,13 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="flex flex-col justify-center items-center uppercase">
+        <div
+          className="flex flex-col justify-center items-center uppercase"
+          data-aos="zoom-in"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <p className="text-purple-800 text-center py-4 capitalize">
             Great Team Members
           </p>
@@ -447,19 +477,38 @@ const Home = () => {
       <section className="accordion md:w-4/5 md:ml-auto p-5">
         <div className="md:flex items-center justify-between gap-2">
           <div className="ml-[-200px] md:relative flex-initial py-6 md:py-0 md:w-[60%]">
-            <img
-              src={accordionImg}
-              alt=""
-              className="md:w-[700px] -z-10 md:my-0 my-10"
-            />
-
-            <img
-              src={accordionImg1}
-              alt=""
-              className="md:w-[400px] bg-white p-2 md:ml-24 md:mt-[-70px] rounded z-50 md:relative"
-            />
+            <div
+              data-aos="fade-down"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
+              <img
+                src={accordionImg}
+                alt=""
+                className="md:w-[700px] -z-10 md:my-0 my-10"
+              />
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600"
+            >
+              <img
+                src={accordionImg1}
+                alt=""
+                className="md:w-[400px] bg-white p-2 md:ml-24 md:mt-[-70px] rounded z-50 md:relative"
+              />
+            </div>
           </div>
-          <div className="flex-initial md:w-[50%]">
+          <div
+            className="flex-initial md:w-[50%]"
+            data-aos="zoom-in"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <div>
               <div className="flex items-center gap-2">
                 <IoIosPhotos className="text-xl text-white" />

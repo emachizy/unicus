@@ -5,13 +5,30 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-900 ">
+    <footer
+      className="bg-purple-900 "
+      data-aos="fade-up"
+      data-aos-offset="200"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="600"
+    >
       <section className="relative md:flex justify-around items-center border-b border-white pb-5">
         <div className="text-white px-10 py-6 flex justify-center gap-2">
-          <div className="bg-opacity-50 bg-gray-600 px-6 rounded md:flex items-center justify-center">
+          <div
+            className="bg-opacity-50 bg-gray-600 px-6 rounded md:flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <SlLocationPin className="text-4xl text-white" />
           </div>
-          <div>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <h2 className="uppercase">Office Address</h2>
             <p className="text-gray-500">
               259 Hilton Street, MK 256 <br /> North, United State
@@ -19,20 +36,37 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-white px-10 py-6 md:flex justify-center gap-2">
-          <div className="bg-opacity-50 bg-gray-600 px-6 rounded flex items-center justify-center">
+          <div
+            className="bg-opacity-50 bg-gray-600 px-6 rounded flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <TbClockHour4 className="text-4xl text-white" />
           </div>
-          <div>
+          <div data-aos="fade-up">
             <h2 className="uppercase">Working Hours</h2>
             <p className="text-gray-500">Weekdays 8am - 22pm</p>
             <p className="text-gray-500">Weekends 10am - 8pm</p>
           </div>
         </div>
         <div className="text-white px-10 py-6 md:flex items- justify-center gap-2">
-          <div className="bg-opacity-50 bg-gray-600 px-6 rounded flex items-center justify-center">
+          <div
+            className="bg-opacity-50 bg-gray-600 px-6 rounded flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <LiaPhoneVolumeSolid className="text-4xl text-white" />
           </div>
-          <div>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="600"
+          >
             <h2 className="uppercase">Contact Us</h2>
             <p className="text-gray-500">24 HOURS SERVICE AVAILABLE</p>
             <a
@@ -51,14 +85,24 @@ const Footer = () => {
         </div>
       </section>
       <section className="grid md:grid-cols-4 gap-10 w-4/5 mx-auto py-10">
-        <div>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <h2 className="text-xl text-white font-bold">About us</h2>
           <p className="text-gray-500 flex-initial">
             Intrinsicly evisculate emerging cutting edge scenarios redefine
             future-proof e-markets demand line
           </p>
         </div>
-        <div>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <h2 className="text-xl text-white font-bold">Links</h2>
           <div className="text-gray-500 transition-all duration-500 flex flex-col gap-2">
             <NavLink to="/about" className="hover:text-purple-200">
@@ -78,14 +122,30 @@ const Footer = () => {
             </NavLink>
           </div>
         </div>
-        <div>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <h2 className="text-xl text-white font-bold">Explore</h2>
         </div>
-        <div>
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="600"
+        >
           <h2 className="text-xl text-white font-bold">Official maps</h2>
         </div>
       </section>
-      <section className="bg-purple-700 py-10">
+      <section
+        className="bg-black text-white py-10"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
         <p className="text-gray-500 text-center">
           Copyright &#xA9; 2022 <span className="text-white">EmTech</span> . All
           right reserved <span className="text-white">UNICUS TECHNOLOGY</span>
